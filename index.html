@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Note</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f3f3f3;
+  --text:#111;
+  --muted:#666;
+  --border:#ddd;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(243,243,243,0.9);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+
+.nav-container{
+  max-width:1100px;
+  margin:auto;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:"Playfair Display", serif;
+  font-size:20px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  margin-left:25px;
+  font-size:14px;
+}
+
+/* GENERAL SECTIONS */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:140px 40px;
+}
+
+.hero{
+  text-align:center;
+  padding-top:200px;
+}
+
+.hero h1{
+  font-family:"Playfair Display", serif;
+  font-size:64px;
+  font-weight:400;
+}
+
+.hero h2{
+  font-size:120px;
+  letter-spacing:6px;
+  margin:10px 0 20px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+button{
+  border:1px solid var(--text);
+  background:transparent;
+  padding:12px 28px;
+  font-size:13px;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  background:var(--text);
+  color:white;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+
+.section-number{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:10px;
+}
+
+.section-title{
+  font-size:60px;
+  font-weight:500;
+  line-height:1.1;
+}
+
+.text{
+  color:var(--muted);
+  max-width:420px;
+  margin-top:30px;
+  font-size:16px;
+}
+
+img{
+  width:100%;
+  border-radius:4px;
+}
+
+/* SLIDESHOW */
+.slideshow{
+  position:relative;
+}
+
+.slide{
+  display:none;
+}
+
+.slide.active{
+  display:block;
+}
+
+.caption{
+  margin-top:10px;
+  color:var(--muted);
+}
+
+.controls{
+  margin-top:20px;
+}
+
+.controls button{
+  margin-right:10px;
+}
+
+/* MUSIC */
+.music{
+  border-top:1px solid var(--border);
+  padding-top:40px;
+}
+
+audio{
+  width:100%;
+  margin-top:15px;
+}
+.slideshow img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+@media(max-width:900px){
+  .grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+@media(max-width:600px){
+  .slideshow img{
+    height:260px;
+  }
+}
+
+  .hero h2{
+    font-size:60px;
+  }
+
+  .section-title{
+    font-size:42px;
+  }
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+  body{
+    font-size:15px;
+  }
+
+  .nav-container{
+    padding:14px 16px;
+  }
+
+  .logo{
+    font-size:16px;
+  }
+
+  nav a{
+    margin-left:12px;
+    font-size:13px;
+  }
+
+  section{
+    padding:90px 18px;
+  }
+
+  .hero{
+    padding-top:120px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero h2{
+    font-size:42px;
+    letter-spacing:2px;
+    line-height:1.1;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .section-title{
+    font-size:32px;
+  }
+
+  .text{
+    font-size:15px;
+    max-width:100%;
+    line-height:1.7;
+  }
+
+  img{
+    border-radius:6px;
+  }
+
+  button{
+    width:100%;
+    padding:14px;
+    font-size:14px;
+  }
+
+  .controls{
+    display:flex;
+    gap:10px;
+  }
+
+  .controls button{
+    flex:1;
+    margin:0;
+  }
+
+  footer{
+    padding:40px 20px;
+    font-size:13px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">Abarna</div>
+    <div>
+      <a href="#note">Note</a>
+      <a href="#music">Song</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>For Abu (My Laav)</h1>
+  <h2>A NOTE</h2>
+  <p>A message I hope you’ll read when you’re ready.</p>
+  <button onclick="scrollToSection()">VIEW NOTE</button>
+</section>
+
+<!-- NOTE SECTION -->
+<section id="note" class="grid">
+  <div>
+    <div class="section-number">01</div>
+    <div class="section-title">A NOTE FOR YOU</div>
+
+    <p class="text" id="message">
+      I want to start by acknowledging that I hurt you.
+      I’ve taken time to reflect, and I understand the impact
+      of my actions.
+    </p>
+
+    <button onclick="nextMessage()">CONTINUE</button>
+  </div>
+
+  <div class="slideshow">
+    <div class="slide active">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.53.00.jpeg">
+      <div class="caption">MY PRETTIEST GAAL</div>
+    </div>
+    <div class="slide">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.55.44.jpeg">
+      <div class="caption">I LOVE YOU EVEN WHEN YOU'RE CRYING LIKE THIS</div>
+    </div>
+    <div class="slide">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.55.45 (1).jpeg">
+      <div class="caption">I LOVE WHEN WE ARE STUPID TOGETHER</div>
+    </div>
+ <div class="slide">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.55.45 (2).jpeg">
+      <div class="caption">YOUR ANPANMAN IS SORRY. PLEASE FORGIVE HER</div>
+    </div> <div class="slide">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.55.45.jpeg">
+      <div class="caption">I LOVE YOU WITH ALL MY HEART AND I AM AN ASSHOLE FOR BREAKING YOUR HEART</div>
+    </div> <div class="slide">
+      <img src="photos/WhatsApp Image 2026-02-07 at 22.55.46 (1).jpeg">
+      <div class="caption">I MISS YOUR STUPID FACE. PLEASE COME BACK TO THIS ASS</div>
+    </div>
+  
+    <div class="controls">
+      <button onclick="changeSlide(-1)">Previous</button>
+      <button onclick="changeSlide(1)">Next</button>
+    </div>
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music" class="music">
+  <div class="section-number">02</div>
+  <div class="section-title">A SONG</div>
+  <p class="text">If you’d like to listen.</p>
+  <audio controls>
+    <source src="Bruno Major - Nothing (Lyric & Chord Video) - Bruno Major.mp3" type="audio/mpeg">
+  </audio>
+</section>
+
+<footer>
+  For Abarna — with sincerity.
+</footer>
+
+<script>
+function scrollToSection(){
+  document.getElementById("note").scrollIntoView({behavior:"smooth"});
+}
+
+const messages=[
+"I take responsibility for my behavior and how it affected you.",
+"You deserved more care, consistency, and respect than I showed.",
+"This isn’t about defending myself — it’s about acknowledging your feelings.",
+"I value you deeply, Abarna, and I’m committed to doing better.",
+"Whenever you’re ready, I’ll be here to listen."
+];
+
+let messageIndex=0;
+
+function nextMessage(){
+  const container=document.getElementById("message");
+  if(messageIndex<messages.length){
+    container.innerText=messages[messageIndex];
+    messageIndex++;
+  }else{
+    container.innerText="Thank you for reading this.Pnes fargeev haal";
+  }
+}
+
+/* slideshow */
+let slideIndex=0;
+const slides=document.getElementsByClassName("slide");
+
+function showSlide(i){
+  for(let s of slides) s.classList.remove("active");
+  slides[i].classList.add("active");
+}
+
+function changeSlide(dir){
+  slideIndex+=dir;
+  if(slideIndex<0) slideIndex=slides.length-1;
+  if(slideIndex>=slides.length) slideIndex=0;
+  showSlide(slideIndex);
+}
+
+/* SWIPE */
+let touchStartX=0;
+let touchEndX=0;
+
+const slideshow=document.querySelector(".slideshow");
+
+slideshow.addEventListener("touchstart",function(e){
+  touchStartX=e.changedTouches[0].screenX;
+});
+
+slideshow.addEventListener("touchend",function(e){
+  touchEndX=e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  const swipeDistance=touchEndX-touchStartX;
+
+  if(Math.abs(swipeDistance)>50){
+    if(swipeDistance<0){
+      changeSlide(1);
+    }else{
+      changeSlide(-1);
+    }
+  }
+}
+</script>
+
+
+</body>
+</html>
